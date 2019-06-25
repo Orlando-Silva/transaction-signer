@@ -30,7 +30,7 @@ func HandleRequest(ctx context.Context, receivedObject SignEvent) (string, error
 
 	returnedData, errr := SignData(receivedObject.KeySigner, receivedObject.DataToSign)
 
-	if errr != nil {
+	if errr == nil {
 		return fmt.Sprintf(returnedData), nil
 	} 
 
